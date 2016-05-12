@@ -1,0 +1,30 @@
+Object.starRating = function(rating){ 
+  var fullStar  = "<i class='fa fa-star'></i>"
+  var halfStar  = "<i class='fa fa-star-half-o'></i>";
+  var emptyStar = "<i class='fa fa-star-o'></i>"
+
+  var output = [];
+
+  var numberOfFullStars = Math.floor(rating);
+
+  for (i = 0; i < numberOfFullStars; i++){
+    output.push(fullStar)
+  }
+
+  if (rating % 1 != 0) {
+    output.push(halfStar)
+  } 
+
+  var numberofEmptyStars = ( 5 - output.length)
+
+  for (i = 0; i < numberofEmptyStars; i++){
+    output.push(emptyStar)
+  }
+
+  var stars = output.join("");
+  return stars;
+}
+
+
+
+Object.starRating(venue.rating);
